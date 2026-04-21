@@ -1,15 +1,22 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
+import dynamicImport from "next/dynamic";
 import { navItems } from "@/data";
 
-import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import Footer from "@/components/Footer";
-import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
-import RecentProjects from "@/components/RecentProjects";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
+const FloatingNav = dynamicImport(
+  () => import("@/components/ui/FloatingNavbar").then(mod => mod.FloatingNav),
+  { ssr: false }
+);
+
+const Hero = dynamicImport(() => import("@/components/Hero"), { ssr: false });
+const Grid = dynamicImport(() => import("@/components/Grid"), { ssr: false });
+const Footer = dynamicImport(() => import("@/components/Footer"), { ssr: false });
+const Clients = dynamicImport(() => import("@/components/Clients"), { ssr: false });
+const Approach = dynamicImport(() => import("@/components/Approach"), { ssr: false });
+const Experience = dynamicImport(() => import("@/components/Experience"), { ssr: false });
+const RecentProjects = dynamicImport(() => import("@/components/RecentProjects"), { ssr: false });
 
 const Home = () => {
   return (
