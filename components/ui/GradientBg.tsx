@@ -39,7 +39,11 @@ export const BackgroundGradientAnimation = ({
   const [curY, setCurY] = useState(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
+
+  // ✅ FIX 1: document guard
   useEffect(() => {
+    if (typeof document === "undefined") return;
+
     document.body.style.setProperty(
       "--gradient-background-start",
       gradientBackgroundStart
@@ -60,11 +64,11 @@ export const BackgroundGradientAnimation = ({
 
   useEffect(() => {
     function move() {
-      if (!interactiveRef.current) {
-        return;
-      }
-      setCurX(curX + (tgX - curX) / 20);
-      setCurY(curY + (tgY - curY) / 20);
+      if (!interactiveRef.current) return;
+
+      setCurX((prev) => prev + (tgX - prev) / 20);
+      setCurY((prev) => prev + (tgY - prev) / 20);
+
       interactiveRef.current.style.transform = `translate(${Math.round(
         curX
       )}px, ${Math.round(curY)}px)`;
@@ -82,7 +86,11 @@ export const BackgroundGradientAnimation = ({
   };
 
   const [isSafari, setIsSafari] = useState(false);
+
+  // ✅ FIX 2: navigator guard
   useEffect(() => {
+    if (typeof navigator === "undefined") return;
+
     setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
   }, []);
 
@@ -111,7 +119,9 @@ export const BackgroundGradientAnimation = ({
           </filter>
         </defs>
       </svg>
+
       <div className={cn("", className)}>{children}</div>
+
       <div
         className={cn(
           "gradients-container h-full w-full blur-lg",
@@ -127,6 +137,7 @@ export const BackgroundGradientAnimation = ({
             `opacity-100`
           )}
         ></div>
+
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--second-color),_0)_50%)_no-repeat]`,
@@ -136,6 +147,7 @@ export const BackgroundGradientAnimation = ({
             `opacity-100`
           )}
         ></div>
+
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
@@ -145,6 +157,7 @@ export const BackgroundGradientAnimation = ({
             `opacity-100`
           )}
         ></div>
+
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fourth-color),_0.8)_0,_rgba(var(--fourth-color),_0)_50%)_no-repeat]`,
@@ -154,6 +167,7 @@ export const BackgroundGradientAnimation = ({
             `opacity-70`
           )}
         ></div>
+
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fifth-color),_0.8)_0,_rgba(var(--fifth-color),_0)_50%)_no-repeat]`,
