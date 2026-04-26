@@ -12,10 +12,12 @@ export default function ContactPage() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setStatus("idle");
 
     try {
       await emailjs.send(
@@ -29,12 +31,11 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
 
-      alert("Message sent successfully 🚀");
+      setStatus("success");
       setForm({ name: "", email: "", message: "" });
-
     } catch (error) {
       console.error(error);
-      alert("Failed to send message ❌");
+      setStatus("error");
     }
 
     setLoading(false);
@@ -42,20 +43,18 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center px-4 py-20 relative overflow-hidden">
+      {/* Background */}
+<div
+  className="absolute inset-0 -z-10"
+  style={{ backgroundColor: "#000219" }}
+>
+  <div className="absolute w-full h-full bg-[radial-gradient(white_1px,transparent_1px)] [background-size:20px_20px] opacity-20"></div>
 
-      {/* 🌌 Space Background */}
-      <div className="absolute inset-0 -z-10 bg-black">
-        
-        {/* Stars */}
-        <div className="absolute w-full h-full bg-[radial-gradient(white_1px,transparent_1px)] [background-size:20px_20px] opacity-20"></div>
-
-        {/* Glow */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple rounded-full blur-[120px] opacity-30"></div>
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-500 rounded-full blur-[120px] opacity-20"></div>
-      </div>
-
-      {/* 💎 Glass Card */}
-      <div className="w-full max-w-3xl backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
+  <div className="absolute top-20 left-10 w-72 h-72 bg-purple rounded-full blur-[120px] opacity-30"></div>
+  <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-500 rounded-full blur-[120px] opacity-20"></div>
+</div>
+      {/* Card */}
+      <div className="w-full max-w-3xl backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 md:p-10 shadow-2xl">
         
         <h1 className="text-3xl md:text-4xl font-bold text-center text-white">
           Let’s <span className="text-purple">Connect</span>
@@ -100,17 +99,34 @@ export default function ContactPage() {
             }
           />
 
-          {/* 🔥 Button */}
+          {/* Button */}
           <button
             type="submit"
             disabled={loading}
-            className="flex items-center justify-center gap-2 bg-purple text-white py-4 rounded-lg hover:opacity-60 transition disabled:opacity-700"
+            className="flex items-center justify-center gap-2 bg-purple text-white py-4 rounded-lg hover:opacity-80 transition disabled:opacity-50"
           >
-            {loading ? "Sending..." : "Send Message"}
+            {status === "success"
+              ? "Sent ✅"
+              : loading
+              ? "Sending..."
+              : "Send Message"}
             <FaLocationArrow />
           </button>
-
         </form>
+
+        {/* Success Message */}
+        {status === "success" && (
+          <div className="mt-6 p-4 rounded-lg bg-green-500/10 border border-green-500 text-green-400 text-center animate-fadeIn">
+            ✅ Message sent successfully! I’ll get back to you soon.
+          </div>
+        )}
+
+        {/* Error Message */}
+        {status === "error" && (
+          <div className="mt-6 p-4 rounded-lg bg-red-500/10 border border-red-500 text-red-400 text-center animate-fadeIn">
+            ❌ Something went wrong. Please try again.
+          </div>
+        )}
       </div>
     </div>
   );
