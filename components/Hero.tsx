@@ -60,13 +60,13 @@ const Hero = () => {
             Hi! I&apos;m Mohd Saif Ali, Software Engineer & UI/UX Designer.
           </p>
 
-          <a href="/about">
+         <div id="/" className="py-20">
             <MagicButton
               title="Show my work"
               icon={<FaLocationArrow />}
               position="right"
             />
-          </a>
+          </div>
         </div>
       </div>
     </div>

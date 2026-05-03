@@ -1,12 +1,12 @@
 import { link } from "fs";
 
 export const navItems = [
+  { name: "Home", link: "/" },
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Works", link: "#works" },
+  { name: "Works", link: "#work" },
   { name: "Contact", link: "#contact" },
 ];
-
 export const gridItems = [
   {
     id: 1,
@@ -82,8 +82,16 @@ export const projects = [
     iconLists: ["/next.svg", "/tail.svg", "/node.js.svg", "/mongodb.svg"],
     link: "https://quick-cart-nine-black.vercel.app/",
   },
-  {
+   {
     id: 2,
+    title: "Portfolio Website",
+    des: "A sleek and modern portfolio website showcasing my projects, experience, and skills with a clean design and smooth animations.",
+    img: "/images/Portfolio.png",
+    iconLists: ["/re.svg", "/tail.svg", "/mongodb.svg", "/emailjs.jpeg",],
+    link: "https://saifali.vercel.app/",
+  },
+  {
+    id: 3,
     title: "3D MacBook Landing Page",
     des: "A sleek landing page showcasing the latest MacBook features, designed for optimal user engagement and conversion.",
     img: "/images/Mac.png",
@@ -91,7 +99,7 @@ export const projects = [
     link: "https://apple-website-flax-three.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Travel Booking Website",
     des: "A full tour booking platform with packages, booking & dashboard.",
     img: "/images/TravelGo.png",
@@ -99,7 +107,7 @@ export const projects = [
     link: "https://travel-go-neon.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Clothing E-Commerce",
     des: "Modern fashion store with cart, filters & product variants.",
     img: "/images/Wearluxe.webp",

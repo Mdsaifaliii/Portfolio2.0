@@ -16,7 +16,7 @@ const Footer = dynamicImport(() => import("@/components/Footer"), { ssr: false }
 const Works = dynamicImport(() => import("@/components/Works"), { ssr: false });
 const Approach = dynamicImport(() => import("@/components/Approach"), { ssr: false });
 const Experience = dynamicImport(() => import("@/components/Experience"), { ssr: false });
-const RecentProjects = dynamicImport(() => import("@/components/RecentProjects"), { ssr: false });
+const Projects = dynamicImport(() => import("@/components/Projects"), { ssr: false });
 
 const Home = () => {
   return (
@@ -25,7 +25,7 @@ const Home = () => {
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
-        <RecentProjects />
+        <Projects />
         <Works />
         <Experience />
         <Approach />
