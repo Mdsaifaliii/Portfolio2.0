@@ -40,7 +40,7 @@ export const BackgroundGradientAnimation = ({
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
 
-  // ✅ FIX 1: document guard
+  
   useEffect(() => {
     if (typeof document === "undefined") return;
 
@@ -87,7 +87,7 @@ export const BackgroundGradientAnimation = ({
 
   const [isSafari, setIsSafari] = useState(false);
 
-  // ✅ FIX 2: navigator guard
+
   useEffect(() => {
     if (typeof navigator === "undefined") return;
 
