@@ -3,7 +3,7 @@ import { link } from "fs";
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "Works", link: "#works" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -108,36 +108,36 @@ export const projects = [
   },
 ];
 
-export const testimonials = [
+export const works = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Developed a modern e-commerce platform with product variants, cart functionality, and dynamic pricing. Designed with clean UI and real-world usability in mind.",
+    name: "Quick Cart E-Commerce",
+    title: "Next.js + Tailwind CSS + Node.js + MongoDB + Cloudinary + Inngest",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Built a visually immersive 3D landing page inspired by Apple’s design, using smooth animations and interactive UI for a premium user experience.",
+    name: "3D MacBook Landing Page",
+    title: "React + Tailwind CSS + Three.js",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Created a fully responsive travel booking website with dynamic routing, Firebase integration, and real-time booking functionality.",
+    name: "Travel Booking Website",
+    title: "Next.js + Tailwind CSS + Firebase",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Designed and developed a scalable clothing e-commerce platform with product management, filtering, and responsive layouts.",
+    name: "Clothing E-Commerce",
+    title: "React + Tailwind CSS + MongoDB",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Built reusable and interactive UI components like animated cards, globe visualizations, and modern layouts to enhance user experience.",
+    name: "UI Components & Experiments",
+    title: "Frontend Development + UI/UX",
   },
 ];
 
@@ -208,16 +208,19 @@ export const workExperience = [
 export const socialMedia = [
   {
     id: 1,
+    name: "GitHub",
     img: "/git.svg",
-    link: "https://github.com/YOUR_USERNAME",
+    link: "https://github.com/your-username",
   },
   {
     id: 2,
+    name: "Twitter",
     img: "/twit.svg",
-    link: "https://twitter.com/YOUR_USERNAME",
+    link: "https://twitter.com/your-username",
   },
   {
     id: 3,
+    name: "LinkedIn",
     img: "/link.svg",
     link: "https://www.linkedin.com/in/mohd-saif-ali-software-developer/",
   },

@@ -3,21 +3,20 @@
 import React from "react";
 import Image from "next/image";
 
-import { companies, testimonials } from "@/data";
+import { companies, works } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
 
-const Clients = () => {
+const Works= () => {
   return (
     <section id="testimonials" className="py-20">
       <h1 className="heading">
-        Kind words from
-        <span className="text-purple"> satisfied clients</span>
+        What I’ve <span className="text-purple">Built</span>
       </h1>
 
       <div className="flex flex-col items-center max-lg:mt-10">
         <div className="h-[50vh] md:h-[30rem] rounded-md flex flex-col items-center justify-center relative overflow-hidden">
           <InfiniteMovingCards
-            items={testimonials}
+            items={works}
             direction="right"
             speed="slow"
           />
@@ -48,4 +47,4 @@ const Clients = () => {
   );
 };
 
-export default Clients;
+export default Works;
