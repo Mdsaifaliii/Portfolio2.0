@@ -79,7 +79,7 @@ export const projects = [
     title: "Quick Cart E-Commerce",
     des: "QuickCart is a modern ecommerce platform offering electronics, fast shopping, secure checkout, and exclusive deals.",
     img: "/images/Quickcart.png",
-    iconLists: ["/next.svg", "/tail.svg", "/node.js.svg", "/mongodb.svg"],
+    iconLists: ["/next.svg", "/tail.svg", "/Node.js.svg", "/MongoDB.svg"],
     link: "https://quick-cart-nine-black.vercel.app/",
   },
    {
@@ -87,7 +87,7 @@ export const projects = [
     title: "Portfolio Website",
     des: "A sleek and modern portfolio website showcasing my projects, experience, and skills with a clean design and smooth animations.",
     img: "/images/Portfolio.png",
-    iconLists: ["/re.svg", "/tail.svg", "/mongodb.svg", "/emailjs.jpeg",],
+    iconLists: ["/re.svg", "/tail.svg", "/MongoDB.svg", "/Emailjs.jpeg",],
     link: "https://saifali.vercel.app/",
   },
   {
@@ -95,7 +95,7 @@ export const projects = [
     title: "3D MacBook Landing Page",
     des: "A sleek landing page showcasing the latest MacBook features, designed for optimal user engagement and conversion.",
     img: "/images/Mac.png",
-    iconLists: ["/re.svg", "/tail.svg", "/Three.svg"],
+    iconLists: ["/re.svg", "/tail.svg", "/three.svg"],
     link: "https://apple-website-flax-three.vercel.app/",
   },
   {
@@ -103,7 +103,7 @@ export const projects = [
     title: "Travel Booking Website",
     des: "A full tour booking platform with packages, booking & dashboard.",
     img: "/images/TravelGo.png",
-    iconLists: ["/re.svg", "/tail.svg", "/Firebase.svg", "/node.js.svg"],
+    iconLists: ["/re.svg", "/tail.svg", "/Firebase.svg", "/Node.js.svg"],
     link: "https://travel-go-neon.vercel.app/",
   },
   {
@@ -111,7 +111,7 @@ export const projects = [
     title: "Clothing E-Commerce",
     des: "Modern fashion store with cart, filters & product variants.",
     img: "/images/Wearluxe.webp",
-    iconLists: ["/re.svg", "/tail.svg", "/mongodb.svg"],
+    iconLists: ["/re.svg", "/tail.svg", "/MongoDB.svg"],
     link: "https://wearluxe-ten.vercel.app/",
   },
 ];
