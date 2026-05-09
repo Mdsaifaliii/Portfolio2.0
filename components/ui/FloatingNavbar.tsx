@@ -25,7 +25,7 @@ export const FloatingNav = ({
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
-      const prev = scrollYProgress.getPrevious() ?? 0; // ✅ FIX
+      const prev = scrollYProgress.getPrevious() ?? 0;
       const direction = current - prev;
 
       if (scrollYProgress.get() < 0.05) {
@@ -36,7 +36,6 @@ export const FloatingNav = ({
     }
   });
 
-  // ✅ Smooth Scroll
   const handleScroll = (link: string) => {
     const id = link.replace("#", "");
     const section = document.getElementById(id);
